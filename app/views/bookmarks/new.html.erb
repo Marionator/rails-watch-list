@@ -1,0 +1,9 @@
+<h1>Movies Watch List</h1>
+<h2>Add movie to <%= @list.name %> </h2>
+
+<%# we're doing the below bc list comes 1st in..??%>
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.association :movie, as: :select %>
+  <%= f.input :comment %>
+  <%= f.submit "Add movie", class: "btn btn-primary" %>
+<% end %>

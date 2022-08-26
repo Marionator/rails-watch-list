@@ -1,0 +1,7 @@
+<h1>Movies Watch List</h1>
+
+<h2>All my lists</h2>
+<p><% @lists.each do |l| %></p>
+<p><%= l.name %> | <%= l.bookmarks.count %> movies bookmarked | <%= link_to "See list", l %></p>
+<% end %>
+<p><%= link_to "Add list", new_list_path %></p>

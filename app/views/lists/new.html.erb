@@ -1,0 +1,10 @@
+<h1>Create a new list</h1>
+<h2>Add movie to <%= @list.name %></h2>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%# <%= f.input :address %>
+  <%# <%= f.input :phone_number %>
+  <%# <%= f.input :category, collection: Restaurant::CATEGORIES %>
+  <%= f.submit "Add list", class: "btn btn-primary" %>
+<% end %>
