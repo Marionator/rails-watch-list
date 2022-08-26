@@ -1,14 +1,11 @@
-<h1>Movies Watch List</h1>
-<h2>List: <em><strong><%= @list.name %></em></strong></h2>
-<h3>Bookmarks in this list:</h3>
+<h1><%= @list.name %></h1>
 
-<%= link_to "Add movie (aka bookmark)", new_list_bookmark_path(@list)%>
-
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
 <% @list.bookmarks.each do |bm| %>
-  <div class="card">
-    <h3><%= bm.movie.title %></h3>
-    <p><%= bm.movie.overview %></p>
-    <p><%= bm.comment %></p>
-  </div>
-  <% end %>
-</ul>
+    <div class="card">
+        <h2><%= bm.movie.title %></h2>
+        <p><%= bm.movie.overview %></p>
+        <p><%= bm.comment %></p>
+        <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe, bookmark_path(bm), data: {turbo_method: :delete} %>
+    </div>
+<% end %>

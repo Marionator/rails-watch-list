@@ -1,6 +1,11 @@
-<h1>Movies Watch List</h1>
+<h1>Watch Lists</h1>
 
-<h2>All my lists</h2>
-<%# <p><% @lists.each do |l| %></p> %>
-<%# <% end %> %>
-<p><%= link_to "Add list", new_list_path %></p>
+<%= link_to "+", new_list_path %>
+
+<% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+        <div class="card">
+            <%= list.name %>
+        </div>
+    <% end %>
+<% end %>
